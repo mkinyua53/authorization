@@ -21,7 +21,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mkinyua53\\Authorization\\src\\AuthorizationServiceProvider"
+                "Mkinyua53\\Authorization\\AuthorizationServiceProvider"
             ]
         }
     }
