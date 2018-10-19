@@ -1,0 +1,28 @@
+{
+    "name": "mkinyua53/authorization",
+    "description": "A package to add functionality to larapacks/authorization package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mwatha Kinyua",
+            "email": "mwatha.kinyua@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "larapacks/authorization": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mkinyua53\\Authorization\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mkinyua53\\Authorization\\src\\AuthorizationServiceProvider"
+            ]
+        }
+    }
+}
