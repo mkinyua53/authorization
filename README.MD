@@ -11,11 +11,11 @@ Use composer
 Insert the service provider in config\app.php providers array.
 
 ```php
-  Mkinyua53\Authorization\AuthorizationSericeProvider::class,
+  Mkinyua53\Authorization\AuthorizationServiceProvider::class,
 ```
 ## Usage
 
-Add the relationships functions in 
+Add the relationships functions in
 
 ### \App\User
 ```php
