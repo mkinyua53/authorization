@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Mkinyua53\Authorization;
+namespace Mkinyua53\Authorization;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

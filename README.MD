@@ -15,6 +15,22 @@ Insert the service provider in config\app.php providers array.
 ```
 ## Usage
 
+Change the protected namespace attribute in ```app\Providers\RouteServiceProvider``` to an empty string
+
+```php
+...
+protected $namespace = '';
+...
+```
+
+Update your routes accordingly to include the ```app\Http\Controllers``` namespace
+
+```php
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    // Your routes here
+});
+```
+
 Add the relationships functions in
 
 ### \App\User
