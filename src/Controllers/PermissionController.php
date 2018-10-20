@@ -1,6 +1,6 @@
 <?php
 
-namespace Mkinyua53\Authorization;
+namespace App\Http\Controllers\Mkinyua53\Authorization;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -80,7 +80,7 @@ class PermissionController extends Controller
     public function destroy(Permission $permission)
     {
         $permission->delete();
-        
+
         return $permission;
     }
 
