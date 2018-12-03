@@ -5,6 +5,7 @@ namespace Mkinyua53\Authorization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Role;
+use App\User;
 use App\Permission;
 
 class RoleController extends Controller

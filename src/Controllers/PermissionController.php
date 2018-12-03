@@ -5,6 +5,7 @@ namespace Mkinyua53\Authorization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Permission;
+use App\User;
 use Session;
 
 class PermissionController extends Controller
