@@ -43,7 +43,7 @@ class RoleController extends Controller
 	 * @param \App\Role $role
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show()
+	public function show(Role $role)
 	{
 			return $role->load('permissions', 'users');
 	}
