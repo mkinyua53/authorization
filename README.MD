@@ -59,7 +59,7 @@ public function users()
 Insert the routes declaration in your `routes\web.php` or `routes\api.php`
 
 ```php
-\Mkinyua\Authorization\Authorization::routes();
+\Mkinyua53\Authorization\Authorization::routes();
 ```
 
 The following routes will be added
