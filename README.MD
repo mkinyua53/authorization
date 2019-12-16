@@ -15,22 +15,6 @@ Insert the service provider in config\app.php providers array.
 ```
 ## Usage
 
-Change the protected namespace attribute in ```app\Providers\RouteServiceProvider``` to an empty string
-
-```php
-...
-protected $namespace = '';
-...
-```
-
-Update your routes accordingly to include the ```app\Http\Controllers``` namespace
-
-```php
-Route::group(['namespace' => 'App\Http\Controllers'], function () {
-    // Your routes here
-});
-```
-
 Add the relationships functions in
 
 ### \App\User
@@ -75,6 +59,12 @@ public function users()
 Insert the routes declaration in your `routes\web.php` or `routes\api.php`
 
 ```php
+\Mkinyua\Authorization\Authorization::routes();
+```
+
+The following routes will be added
+
+```php
 Route::group(['namespace' => '\Mkinyua53\Authorization'], function () {
     Route::resource('roles', 'RoleController', ['except' => ['create', 'edit']]);
     Route::resource('permissions', 'PermissionController', ['except' => ['create', 'edit']]);
@@ -93,59 +83,7 @@ Route::group(['namespace' => '\Mkinyua53\Authorization'], function () {
 ```
 
 ### NOTE
-1. This package is optimized to be used in api, no views are provided
-2. You should add your own authorization to routes. e.g.
-```php
-Route::group(['namespace' => '\Mkinyua53\Authorization'], function () {
-    Route::post('roles/{role}/users/{user}/attach', 'RoleController@attachUser')->middleware('role:admin');
-});
-```
-The above route will check for an `admin` role on the authenticated user. You SHOULD have added the role middleware in your `app\Http\Kernel` as explained in the `larapacks\authorization` package. Alternatively, create a middleware that check for an admin column on your users table and use it.
-#### Migration
-```php
-Schema::create('users', function (Blueprint $table) {
-  ...
-  $table->string('admin')->default('0');
-  ...
-});
-```
-
-#### \App\User
-```php
-...
-public function isAdmin()
-{
-  return $this->attributes['admin'] == '0' ? false : true;
-}
-...
-```
-
-#### \App\Http\MIddleware\Admin
-```php
-...
-public function handle($request, Closure $next)
-{
-  $user = \Auth::user();
-
-  if ($user && $user->isAdmin()) {
-      return $next($request);
-  }
-  else {
-    abort(403);
-  }
-}
-...
-```
-#### \App\Http\Kernel
-```php
-...
-protected $routeMiddleware = [
-  ...
-  'admin' => \App\Http\Middleware\Admin::class,
-  ...
-];
-...
-```
+1. This package is optimized to be used in an api, no views are provided
 
 ## Summary
 
