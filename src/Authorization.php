@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 class Authorization {
     public static function routes()
     {
-        Route::group(['namespace' => '\Mkinyua53\Authorization'], function () {
+        Route::group(['namespace' => '\Mkinyua53\Authorization\Controllers'], function () {
             Route::resource('roles', 'RoleController', ['except' => ['create', 'edit']]);
             Route::resource('permissions', 'PermissionController', ['except' => ['create', 'edit']]);
 

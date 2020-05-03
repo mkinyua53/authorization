@@ -1,7 +1,7 @@
 <?php
 
 
-// Route::group(['namespace' => 'Mkinyua53\Authorization'], function () {
+// Route::group(['namespace' => '\Mkinyua53\Authorization\Controllers'], function () {
 //   Route::group(['prefix' => 'api'], function () {
 //     Route::resource('roles', 'RoleController', ['except' => ['create', 'edit']]);
 //     Route::resource('permissions', 'PermissionController', ['except' => ['create', 'edit']]);
