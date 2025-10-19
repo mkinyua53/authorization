@@ -10,6 +10,7 @@
         }
     ],
     "minimum-stability": "dev",
+    "abandoned": "mkinyua53/laravel-inertia-boilerplate",
     "require": {
         "larapacks/authorization": "^2.3"
     },
